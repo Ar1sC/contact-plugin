@@ -8,7 +8,21 @@
  * 
  */
 
- if ( !defined ('ABSPATH')) 
- {
-    die('You cannot be here');
- }
+if (!defined('ABSPATH')) {
+   die('You cannot be here');
+}
+
+if (!class_exists('ContactPlugin')) {
+   class ContactPlugin
+   {
+      public function __construct()
+      {
+         require_once (plugin_dir_path(__FILE__) . '/vendor/autoload.php');
+      }
+
+
+   }
+
+   new ContactPlugin;
+
+}
