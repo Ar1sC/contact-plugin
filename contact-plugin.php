@@ -17,12 +17,20 @@ if (!class_exists('ContactPlugin')) {
    {
       public function __construct()
       {
-         require_once (plugin_dir_path(__FILE__) . '/vendor/autoload.php');
+         define('MY_PLUGIN_PATH', plugin_dir_path(__FILE__));
+
+         require_once (MY_PLUGIN_PATH . '/vendor/autoload.php');
+      }
+
+      public function initialize()
+      {
+         include_once MY_PLUGIN_PATH . 'includes/utilities.php';
       }
 
 
    }
 
-   new ContactPlugin;
+   $contactPluin = new ContactPlugin;
 
+   $contactPlugin->initialize();
 }
