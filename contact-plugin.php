@@ -7,3 +7,8 @@
  * Text Domain: options-plugin
  * 
  */
+
+ if ( !defined ('ABSPATH')) 
+ {
+    die('You cannot be here');
+ }
